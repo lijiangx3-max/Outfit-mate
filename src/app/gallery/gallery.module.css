@@ -1,0 +1,99 @@
+.container {
+    padding: 16px;
+    padding-bottom: 80px;
+}
+
+.header {
+    margin-bottom: 20px;
+}
+
+.title {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.filterBar {
+    display: flex;
+    overflow-x: auto;
+    gap: 10px;
+    padding-bottom: 5px;
+    scrollbar-width: none;
+}
+
+.filterBtn {
+    padding: 6px 15px;
+    background: #f0f0f0;
+    border-radius: 20px;
+    font-size: 13px;
+    white-space: nowrap;
+}
+
+.filterBtn.active {
+    background: var(--xhs-red);
+    color: white;
+}
+
+.galleryGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+
+.noteCard {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.imageBox {
+    width: 100%;
+    aspect-ratio: 3/4;
+    background-size: cover;
+    background-position: center;
+}
+
+.cardContent {
+    padding: 10px;
+}
+
+.noteTitle {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.tagRow {
+    display: flex;
+    gap: 5px;
+    margin-bottom: 8px;
+}
+
+.tag {
+    font-size: 11px;
+    color: #5b92e1;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.date {
+    font-size: 10px;
+    color: #999;
+}
+
+.deleteBtn {
+    background: none;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.emptyState {
+    text-align: center;
+    padding: 50px 0;
+    color: #999;
+}

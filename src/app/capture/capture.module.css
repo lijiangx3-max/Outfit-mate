@@ -1,0 +1,287 @@
+.container {
+    min-height: 100vh;
+    background: #ffffff;
+    padding-bottom: 20px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 20px;
+    border-bottom: 0.5px solid #f2f5f2;
+    background: white;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.title {
+    font-size: 17px;
+    font-weight: 800;
+    color: var(--text-main);
+    letter-spacing: -0.3px;
+}
+
+.backBtn {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-muted);
+    background: none;
+}
+
+.aiBadge {
+    background: var(--primary-green-light);
+    color: var(--primary-green);
+    font-size: 10px;
+    padding: 2px 10px;
+    border-radius: 12px;
+    font-weight: 700;
+}
+
+.content {
+    padding: 20px;
+}
+
+.cameraSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 40px;
+}
+
+.cameraCircle {
+    width: 240px;
+    height: 240px;
+    border-radius: 54px;
+    background: #ffffff;
+    border: 1px solid rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+    box-shadow: 0 10px 40px rgba(0,0,0,0.04);
+}
+
+.cameraCircle:hover {
+    transform: scale(1.02);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.08);
+}
+
+.cameraIcon {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #007AFF, #0056b3);
+    border-radius: 22px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    box-shadow: 0 8px 16px rgba(0, 122, 255, 0.3);
+}
+
+.cameraCircle p {
+    font-size: 16px;
+    font-weight: 600;
+    color: #1d1d1f;
+    letter-spacing: -0.2px;
+}
+
+.analysisView {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 150px;
+}
+
+.previewContainer {
+    width: 100%;
+    max-width: 320px;
+    aspect-ratio: 3/4;
+    border-radius: 18px;
+    overflow: hidden;
+    margin: 0 auto 28px;
+    box-shadow: 0 12px 30px rgba(79, 121, 66, 0.12);
+}
+
+.fullPreview {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.resultDetails {
+    background: white;
+    padding: 12px 4px;
+    animation: slideUp 0.5s ease;
+}
+
+.aiHeader {
+    font-size: 13px;
+    font-weight: 800;
+    color: var(--primary-green);
+    margin-bottom: 18px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-transform: uppercase;
+}
+
+.sparkleIcon {
+    font-size: 18px;
+}
+
+.metaRow {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 24px;
+    font-size: 11.5px;
+    color: var(--text-light);
+    font-weight: 500;
+}
+
+.resultTitle {
+    font-size: 24px;
+    font-weight: 800;
+    color: var(--text-main);
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.seasonTag {
+    font-size: 11px;
+    background: var(--primary-green-light);
+    color: var(--primary-green);
+    padding: 3px 12px;
+    border-radius: 8px;
+    font-weight: 700;
+}
+
+.resultDesc {
+    font-size: 15.5px;
+    line-height: 1.75;
+    color: var(--text-muted);
+    margin-bottom: 28px;
+    white-space: pre-wrap;
+}
+
+.tagList {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 28px;
+}
+
+.tagItem {
+    color: #517a47;
+    font-size: 13.5px;
+    font-weight: 600;
+}
+
+.suggestionBox {
+    background: #f9faf9;
+    padding: 18px;
+    border-radius: 14px;
+    font-size: 14px;
+    color: var(--text-main);
+    line-height: 1.7;
+    border: 0.5px solid #ecefec;
+}
+
+.suggestionBox .label {
+    font-weight: 800;
+    font-size: 11px;
+    color: var(--text-muted);
+    margin-bottom: 6px;
+    text-transform: uppercase;
+}
+
+.skeletonTitle,
+.skeletonText {
+    background: linear-gradient(90deg, #f3f6f3 25%, #e9efea 50%, #f3f6f3 75%);
+    background-size: 200% 100%;
+    animation: skeleton-loading 1.6s infinite;
+    border-radius: 6px;
+}
+
+.skeletonTitle {
+    height: 32px;
+    width: 65%;
+    margin-bottom: 16px;
+}
+
+.skeletonText {
+    height: 120px;
+    width: 100%;
+}
+
+@keyframes skeleton-loading {
+    0% {
+        background-position: 200% 0;
+    }
+
+    100% {
+        background-position: -200% 0;
+    }
+}
+
+.actionFixed {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(15px);
+    padding: 20px 24px 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    border-top: 0.5px solid #f0f3f0;
+    z-index: 1000;
+}
+
+.mainSaveBtn {
+    width: 100%;
+    background: var(--primary-green);
+    color: white;
+    padding: 16px;
+    border-radius: 35px;
+    font-size: 16px;
+    font-weight: 800;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(79, 121, 66, 0.2);
+}
+
+.mainSaveBtn:disabled {
+    background: #e9eee9;
+    color: #aeb9ae;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+.cancelLink {
+    background: none;
+    color: var(--text-light);
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.successToast {
+    position: fixed;
+    top: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(44, 62, 45, 0.95);
+    color: white;
+    padding: 14px 28px;
+    border-radius: 40px;
+    font-size: 14px;
+    font-weight: 600;
+    z-index: 2000;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 0.3s ease;
+}

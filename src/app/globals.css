@@ -1,0 +1,179 @@
+:root {
+  --island-black: #1c1c1e;
+  /* 苹果灵动岛深邃黑 */
+  --primary-green: #4f7942;
+  --primary-green-light: #e8f3e5;
+  --accent-green: #7ca971;
+  --text-main: #1c1c1e;
+  /* 提升文字对比度 */
+  --text-muted: #8e8e93;
+  /* iOS 辅助色风格 */
+  --text-light: #c7c7cc;
+  --bg-main: #ffffff;
+  --secondary-bg: #f2f2f7;
+  /* iOS 风格浅灰底色 */
+  --white: #ffffff;
+  --error: #ff3b30;
+  /* iOS 警示红 */
+
+  --radius-island: 24px;
+  /* 灵动岛风格圆角 */
+  --radius-pill: 100px;
+  /* 全胶囊状态 */
+  --radius-squircle: 22px;
+  /* 超椭圆感圆角 */
+  --xhs-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+  --island-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  -webkit-tap-highlight-color: transparent;
+  /* 禁止 iOS 橡皮筋回弹效果，提升 App 沉浸感 */
+  overscroll-behavior: none;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", sans-serif;
+  color: var(--text-main);
+  background: var(--bg-main);
+  line-height: 1.5;
+  user-select: none;
+  /* 防止长按选中文本，更像 App */
+  background-color: var(--secondary-bg);
+  -webkit-font-smoothing: antialiased;
+}
+
+button {
+  border: none;
+  outline: none;
+  font-family: inherit;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+  /* 模拟胶合感曲线 */
+}
+
+button:active {
+  transform: scale(0.92);
+  /* 更强烈的按压感 */
+}
+
+input,
+textarea,
+select {
+  font-family: inherit;
+  outline: none;
+}
+
+.main-content {
+  max-width: 600px;
+  margin: 0 auto;
+  min-height: 100vh;
+  background: var(--bg-main);
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.02);
+}
+
+/* 动画库 */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.95);
+    opacity: 0.5;
+  }
+
+  50% {
+    transform: scale(1.05);
+    opacity: 0.8;
+  }
+
+  100% {
+    transform: scale(0.95);
+    opacity: 0.5;
+  }
+}
+
+/* 底部导航栏样式 - iOS 沉浸式风格 */
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 600px;
+  min-height: calc(64px + env(safe-area-inset-bottom));
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(30px) saturate(200%);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-top: 0.5px solid rgba(0, 0, 0, 0.05);
+  padding-bottom: env(safe-area-inset-bottom);
+  z-index: 1000;
+  box-shadow: 0 -1px 3px rgba(0, 0, 0, 0.02);
+}
+
+.nav-item {
+  text-decoration: none;
+  color: #8e8e93;
+  font-size: 10px;
+  font-weight: 600;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  transition: all 0.2s ease;
+}
+
+.nav-item.active {
+  color: var(--primary-green);
+}
+
+.capture-btn {
+  width: 50px;
+  height: 48px;
+  background: var(--island-black);
+  color: white;
+  border-radius: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 26px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  margin-top: -12px;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
